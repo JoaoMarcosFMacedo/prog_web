@@ -33,16 +33,30 @@
             padding: 8px 12px;
             cursor: pointer;
         }
-        li {
-            margin: 6px 0;
+
+        /* 🔥 Cada tarefa dentro da sua própria box */
+        .tarefa {
+            background: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        li button {
+
+        .tarefa button {
             background: red;
             color: white;
             border: none;
-            border-radius: 4px;
+            padding: 6px 10px;
+            border-radius: 5px;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
         }
     </style>
 </head>
@@ -64,8 +78,8 @@
             return (
                 <ul>
                     {tarefas.map(t => (
-                        <li key={t.id}>
-                            {t.texto}
+                        <li key={t.id} className="tarefa">
+                            <span>{t.texto}</span>
                             <button onClick={() => remover(t.id)}>X</button>
                         </li>
                     ))}
@@ -99,7 +113,7 @@
 
             return (
                 <div>
-                    <Header titulo="A07 - Introdução ao React" aluno="Seu Nome" />
+                    <Header titulo="A07 - Introdução ao React" aluno="João Marcos Freire Macedo" />
 
                     <div style={{ marginBottom: "20px" }}>
                         <input
